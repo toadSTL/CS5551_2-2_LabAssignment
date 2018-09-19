@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 1 Oauth Mashup</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap3.3.7/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap3.3.7/css/bootstrap.min.css">-->
     <meta name="google-signin-client_id" content="790101742280-qcvrrjjisd4i1p4e870luieilj49b7nm.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="application/javascript" src="http://code.angularjs.org/1.4.4/angular.min.js"></script>
     <script src="script.js"></script>
     <style>
         .g-signin2{
@@ -18,7 +19,7 @@
         }
     </style>
 </head>
-<body>
+<body >
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="data">
         <p>Profile Details</p>
@@ -27,5 +28,19 @@
         <p id="email" class="alert alert-danger"></p>
         <button onclick="signOut()" class="btn btn-danger">Sign Out</button>
     </div>
+    <div ng-app="myApp" ng-controller="myController">
+        <input type="text"  ng-model="searchTerm" style="width: 50%;"  placeholder="Enter search term...">
+        <input type="button" ng-click="gKnowledgeSearch()" value="Search Google Knowledge Graph">
+
+    <div>{{resultName}}
+    </div>
+    <div>{{resultDesc}}</div>
+    </div>
+
+    <div ng-app="imgApp" ng-controller="imgController">
+
+    </div>
+
+    <script src="googleSearch.js"></script>
 </body>
 </html>

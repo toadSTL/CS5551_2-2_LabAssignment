@@ -1,3 +1,5 @@
+
+
 function onSignIn(googleUser){
     var profile=googleUser.getBasicProfile();
     $(".g-signin2").css("display","none");
@@ -9,7 +11,7 @@ function onSignIn(googleUser){
 function signOut(){
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function(){
-       alert("You have successfully signed out");
+        console.log("You have successfully signed out");
         $(".g-signin2").css("display","block");
         $(".data").css("display","none");
 
