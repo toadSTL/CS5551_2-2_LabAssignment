@@ -39,9 +39,6 @@ myApp.controller("myController", ["$scope", function($scope) {
     recognition.maxAlternatives = 1;
 
     var diagnostic = document.querySelector(".output");
-    var bg = document.querySelector("html");
-    var hints = document.querySelector(".hints");
-
 
     $scope.listen = function() {
         recognition.start();
