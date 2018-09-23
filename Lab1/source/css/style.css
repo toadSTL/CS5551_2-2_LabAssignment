@@ -1,0 +1,64 @@
+body {
+    background-color: silver;
+    background-image: url("http://localhost:63342/Lab1/source/images/abstract-astro-astronomy-956999.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.g-signin2{
+
+}
+
+.login{
+    background-color: darkgrey;
+    color: white;
+    padding: 40px;
+    margin-top: 20%;
+}
+
+.content{
+    display: none;
+    background-color: darkgrey;
+    color: white;
+    padding: 40px;
+    margin-top: 20%;
+}
+
+.container {
+    background-color: darkgrey;
+    width: 40%;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: auto;
+    padding: 40px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+.button{
+    color: black;
+}
+
+.loginbutton{
+    color: black;
+    background-color: dimgrey;
+}
+.registerbutton{
+    color: black;
+    backgroud-color: lightgrey;
+}
+
+.regFields{
+    display: none;
+}
+
+
+

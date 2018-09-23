@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1 Oauth Mashup</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap3.3.7/css/bootstrap.min.css">-->
+    <meta name="google-signin-client_id" content="790101742280-qcvrrjjisd4i1p4e870luieilj49b7nm.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="application/javascript" src="http://code.angularjs.org/1.4.4/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xl-offset-4" ng-app="myApp" ng-controller="myController">
+        <div class="login" ng-controller="accessController">
+            <button class="loginbutton" ng-click="goToLogin()">Login Form</button>
+            <button class="registerbutton" ng-click="goToRegister()">Register Form</button>
+            <div class="logFields">
+                <label>Username<span class="req">*</span></label>
+                <input type="text" name="username" id="username" style="width: 40%;color: black;" required autocomplete="off">
+                <br>
+                <label>Password<span class="req">*</span></label>
+                <input type="password" name="password" id="password" style="width: 40%;color: black;" required autocomplete="off">
+                <br>
+                <button class="button" ng-click="login()">Login</button>
+                <div>
+                    <p id="logError"></p>
+                </div>
+            </div>
+            <div class="regFields">
+                    <label>Username<span class="req">*</span></label>
+                    <input type="text" name="un" id="un" style="width: 40%;color: black;" required autocomplete="off">
+                    <br>
+                    <label>Email<span class="req">*</span>    </label>
+                    <input type="text" name="email" id="email" style="width: 40%;color: black;" required autocomplete="off">
+                    <br>
+                    <label>Password<span class="req">*</span></label>
+                    <input type="password" name="pw" id="pw" style="width: 40%;color: black;" required autocomplete="off">
+                    <br>
+                    <button class="button" ng-click="register()">Register</button>
+                    <div>
+                        <p id="regError"></p>
+                    </div>
+            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+        <div class="content">
+            <!--<p>Profile Details</p>
+            <img id="pic" class="img-circle" width="100" height="100">-->
+            <p id="sucess" class="alert alert-success"></p>
+            <div>
+                <div>
+                    <p>Enter search terms or click the microphone icon and say what you are searching for.  Then click the 'Search Google Knowledge Graph' button.</p>
+                </div>
+
+                <input type="image" src="images/icon-128.png" width="40px" height="40px" ng-click="listen();gKnolwedgeSearch()" value="Listen">
+                <br>
+                <input type="text"  ng-model="searchTerm" style="width: 80%;color: black;"  placeholder="Enter search term...">
+                <input type="button" ng-click="gKnowledgeSearch()" style="color: black" class="button" value="Search Google Knowledge Graph">
+                <div>
+                    <p class="output"><em>...system messages</em></p>
+                </div>
+
+                <div id="resName"></div>
+                <div id="resDesc"></div>
+            </div>
+            <a href="about.html" class="button">About</a>
+            <a href="contact.html" class="button">Contact Us</a>
+            <br>
+            <br>
+            <button onclick="signOut()" class="button">Sign Out</button>
+        </div>
+
+    </div>
+
+
+    <script src="js/functions.js"></script>
+</body>
+</html>
