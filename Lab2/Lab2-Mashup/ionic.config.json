@@ -1,0 +1,7 @@
+{
+  "name": "Lab2-Mashup",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
