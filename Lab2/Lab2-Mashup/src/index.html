@@ -26,19 +26,25 @@
         .catch(err => console.error('Error', err));
     }
   </script>-->
-<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-<script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script>
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCS4QENxMRcWMf_trWMjCZodmx7N3jkhrY",
-    authDomain: "lab-2-mashup.firebaseapp.com",
-    databaseURL: "https://lab-2-mashup.firebaseio.com",
-    projectId: "lab-2-mashup",
-    storageBucket: "lab-2-mashup.appspot.com",
-    messagingSenderId: "1019637602822"
-  };
-  firebase.initializeApp(config);
-</script>
+        var config = {
+            apiKey: "AIzaSyCS4QENxMRcWMf_trWMjCZodmx7N3jkhrY",
+            authDomain: "lab-2-mashup.firebaseapp.com",
+            databaseURL: "https://lab-2-mashup.firebaseio.com",
+            projectId: "lab-2-mashup",
+            storageBucket: "lab-2-mashup.appspot.com",
+            messagingSenderId: "1019637602822"
+        };
+        firebase.initializeApp(config);
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS4QENxMRcWMf_trWMjCZodmx7N3jkhrY&v=3.exp&libraries=places"; "https://maps.googleapis.com/maps/api/js?key=AIzaSyCS4QENxMRcWMf_trWMjCZodmx7N3jkhrY&v&callback=initMap" async defer>
+    </script>
+    
+    
+    
   <link href="build/main.css" rel="stylesheet">
 
 </head>
