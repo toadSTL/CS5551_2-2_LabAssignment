@@ -19,6 +19,7 @@ export class HomePage {
   place = '';
   //service;
   //infowindow;
+  placeFound = ''
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -29,6 +30,8 @@ export class HomePage {
   ionViewDidLoad(){
     this.initMap();
   }
+  
+  
 
   initMap() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -55,17 +58,46 @@ export class HomePage {
         
         var placeFound = '';
         
-        //infowindow = new google.maps.InfoWindow();
+        
+        //
         var service = new google.maps.places.PlacesService(this.map);
         service.textSearch(request, (results, status) => {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 console.log(results);
                 placeFound = results.place_id;
+                var req = {
+                    placeId: placeFound,
+                    fields: ['name', 'rating', 'reviews', 'formatted_phone_number', 'geometry']
+                }
+                service.getDetails(req, (results, status) => {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        console.log(results);
+                    }
+                });
             }
-        }).then(_ => {
-            this.getPlaceDetails(placeFound);
-        });    
+        });
+        
+        //var infowindow = new google.maps.InfoWindow();
+        //.then(_ => {
+        //    this.getPlaceDetails(placeFound);
+        //});    
     }
+    
+    //public async callback(results, status) => {
+    //        if (status == google.maps.places.PlacesServiceStatus.OK) {
+    //            console.log(results);
+    //            placeFound = results.place_id;
+    //            var req = {
+    //                placeId: placeFound,
+    //                fields: ['name', 'rating', 'reviews', 'formatted_phone_number', 'geometry']
+    //            }
+    //            service.getDetails(req, (results, status) => {
+    //                if (status == google.maps.places.PlacesServiceStatus.OK) {
+    //                    console.log(results);
+    //                }
+    //            });
+    //        }
+     //   });
     
     
     public getPlaceDetails(placeID){
@@ -81,8 +113,6 @@ export class HomePage {
                 }
             });   
     }
-    
-    
     
     public createMarker(place) {
         new google.maps.Marker({
